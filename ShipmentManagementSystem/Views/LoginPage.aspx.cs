@@ -22,7 +22,7 @@ namespace ShipmentManagementSystem.Views
             {
                 if (string.IsNullOrWhiteSpace(LoginBox.Text) || string.IsNullOrWhiteSpace(PasswordBox.Text))
                 {
-                    Response.Write("Username or Password cannot be empty!");
+                    Response.Write("Username and Password not correct!");
 
                 }
                 else if (IsPostBack)
@@ -37,11 +37,11 @@ namespace ShipmentManagementSystem.Views
                     if (temp == 1)
                     {
                         Response.Redirect("MainPage.aspx");
-                        Response.Write("Login successfully!");
+                        Response.Write("Login completed!");
                     }
                     else
                     {
-                        Response.Write("Wrong Username or Password!");
+                        Response.Write("Incorrect Username or Password!");
                     }
                     conn.Close();
                 }

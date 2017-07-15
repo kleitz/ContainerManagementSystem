@@ -22,7 +22,7 @@ namespace ShipmentManagementSystem.Views
             {
                 if (string.IsNullOrWhiteSpace(UsernameBox.Text) || string.IsNullOrWhiteSpace(PasswordBox.Text))
                 {
-                    Response.Write("Username or Password cannot be empty!");
+                    Response.Write("Username and Password not correct!!");
 
                 }
                 else if (IsPostBack)
@@ -34,7 +34,7 @@ namespace ShipmentManagementSystem.Views
                     int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
                     if (temp == 1)
                     {
-                        Response.Write("User exists already!");
+                        Response.Write("User already registered!");
                     }
                     else
                     {
@@ -45,7 +45,7 @@ namespace ShipmentManagementSystem.Views
 
                         com.ExecuteNonQuery();
                         Response.Redirect("MainPage.aspx");
-                        Response.Write("Register successfully!");
+                        Response.Write("Register completed!");
                     }
                     conn.Close();
                 }

@@ -36,7 +36,7 @@ namespace ShipmentManagementSystem.Views
                     string.IsNullOrWhiteSpace(ExDateBox.Text) || string.IsNullOrWhiteSpace(ExTimeBox.Text) ||
                     string.IsNullOrWhiteSpace(ExLocationBox.Text))
                 {
-                    Response.Write("The fields cannot be empty!");
+                    Response.Write("Please fill all text boxes!");
 
                 }
                 else if (IsPostBack)
@@ -48,7 +48,7 @@ namespace ShipmentManagementSystem.Views
                     int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
                     if (temp == 1)
                     {
-                        Response.Write("ShipmentID exists already!");
+                        Response.Write("ShipmentID already registered!!");
                     }
                     else
                     {
@@ -64,7 +64,7 @@ namespace ShipmentManagementSystem.Views
 
                         com.ExecuteNonQuery();
                         Response.Redirect("MainPage.aspx");
-                        Response.Write("New shipment successfully added!");
+                        Response.Write("New shipment registered successfully!");
                     }
                     conn.Close();
                 }
